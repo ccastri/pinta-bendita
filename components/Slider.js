@@ -88,14 +88,14 @@ const Slider = () => {
 
                     <img
                         src={images2[index]}
-                        className={`block absolute w-full object-contain 
+                        className={` absolute w-full object-contain 
                             ${transL ? 'transition duration-50 ease-linear transform -translate-x-full' : transR ? 'animate-slideL' : ''}`}
                         alt="Wild Landscape"
                     />
                     <img
                         src={images2[index1]}
-                        className={` object-contain block w-full object-contain 
-                            ${transL ? 'animate-slideR' : transR ? 'transition duration-500 ease-linear transform translate-x-full' : ''} `}
+                        className={` object-contain  w-full  
+                            ${transL ? 'animate-slideR' : transR ? 'transition duration-50 ease-linear transform -translate-x-full' : ''} `}
                         alt="Wild Landscape"
                     />
 
