@@ -8,4 +8,7 @@
     body{
       @apply bg-[#06202A] text-gray-300;
     }
+    .btn{
+        @apply  hover:scale-125 cursor-pointer transition-all duration-150 ease-out;
+    }
   }

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react'
 import LoginBtn from '../../components/LoginBtn';
 // import Header from '../../components/Header'
-import Router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 function Signin({ providers }) {
     const router = useRouter()
@@ -14,7 +14,7 @@ function Signin({ providers }) {
     return (
         <>
             {/* <Header /> */}
-            <div className="flex relative bg-amber-800  flex-col min-h-screen w-full py-10 text-center" >
+            <div className="overflow-hidden flex relative bg-amber-800  flex-col min-h-screen w-full py-10 text-center" >
 
 
                 <Image
@@ -62,7 +62,7 @@ function Signin({ providers }) {
                             {/* <div className=' w-full mx-auto'> */}
                             <div className='flex ml-15 mb-5 relative w-full items-center justify-center  text-white'>
                                 <h1 className=' text-center w-full absolute'>INICAR SESSION </h1>
-                                <p className='text-center mt-10 w-full absolute'>Recordar contraseña</p>
+                                <p className='btn text-center mt-10 w-full absolute underline cursor-pointer'>Recordar contraseña</p>
                             </div>
                             {/* 
                             <div className="flex w-full items-center justify-center ">
@@ -80,7 +80,7 @@ function Signin({ providers }) {
 
                             {Object.values(providers).map((provider) => (
                                 <div className='p-4  h-10 flex flex-row items-center mx-auto justify-center' key={provider.name}>
-                                    <div className='mb-2 mr-2  bg-blue-500' key={provider.name}>
+                                    <div className='btn mb-2 mr-2  bg-blue-500' key={provider.name}>
                                         <LoginBtn provider={provider} logos={logos} />
                                     </div>
 
@@ -89,21 +89,21 @@ function Signin({ providers }) {
                         </div>
                         <div className='flex px-2 relative pb-4 -bottom-80 text-justify'>
 
-                            <p className=' text-gray-300 h-20 w-full leading-4 py-4 my-auto mb-10'>Al hacer clic en cualquiera de los botones de inicio de sesión social,
-                                acepta los términos de la política de privacidad descritos <span className='cursor-pointer underline'>aqui</span></p>
+                            <p className=' text-gray-300 h-20 w-80 mx-auto leading-3 py-4 my-auto mb-10 text-xs font-semibold '>Al hacer clic en cualquiera de los botones de inicio de sesión social,
+                                acepta los términos de la política de privacidad descritos <span className='btn cursor-pointer underline'>aqui</span></p>
                         </div>
 
                     </div>
 
                 </div>
-                <div className='flex flex-col my-5 bg-black/[.54] relative mx-5 min-h-[200px] mb-30  px-4'>
-                    <p className='mt-10 text-gray-300 w-full leading-4 text-justify  '> Ser el nuevo nunca había sido tan divertido. Enterate
+                <div className='flex flex-col mt-20 bg-black/[.54] relative mx-5  min-h-[200px] mb-30  px-4'>
+                    <p className='mt-10 text-gray-300 w-full text-justify  text-xs mx-auto leading-3 '> Ser el nuevo nunca había sido tan divertido. Enterate
                         de las ultimas promociones, recibe descuentos por
                         tu nueva membresia y accede a nuestra comunidad
                         para compartir y aprovechar todos nuestros beneficios</p>
 
                     <button
-                        className='cursor-pointer text-center w-20 mt-5   justify-center bg-black -left-2 '
+                        className='btn hover:bg-white hover:text-black cursor-pointer text-center w-20 mt-5 py-2  text-xs justify-center bg-black -left-2 '
                         onClick={() => router.push('/auth/register')}
                     >
                         Registrar

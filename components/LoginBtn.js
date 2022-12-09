@@ -14,7 +14,7 @@ const LoginBtn = ({ provider }) => {
                 alt=""
             />
 
-            <button className=" bg-blue-500 text-white" onClick={() => SingIntoProvider(provider.id, { callbackUrl: '/' })}>
+            <button className=" bg-blue-500 text-xs py-2 px-1 text-white" onClick={() => SingIntoProvider(provider.id, { callbackUrl: '/' })}>
                 Iniciar sesion {provider.name}
             </button>
         </div >
