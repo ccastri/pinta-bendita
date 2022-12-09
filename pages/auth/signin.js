@@ -4,6 +4,7 @@ import React from 'react'
 import LoginBtn from '../../components/LoginBtn';
 // import Header from '../../components/Header'
 import { useRouter } from 'next/router'
+import Header from '../../components/Header'
 
 function Signin({ providers }) {
     const router = useRouter()
@@ -13,9 +14,9 @@ function Signin({ providers }) {
     ]
     return (
         <>
+            <Header />
             {/* <Header /> */}
             <div className="overflow-hidden flex relative bg-amber-800  flex-col min-h-screen w-full py-10 text-center" >
-
 
                 <Image
                     src="/registerbg.png"
