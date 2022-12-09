@@ -3,6 +3,7 @@ import { getProviders, SignIn as SingIntoProvider } from 'next-auth/react'
 import React from 'react'
 import Image from 'next/image'
 import LoginBtn from '../../components/LoginBtn'
+import SignUpBtn from '../../components/SignUpBtn'
 
 function Template({ providers }) {
 
@@ -69,7 +70,7 @@ function Template({ providers }) {
                                     {/* <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                                         Contraseña
                                     </label> */}
-                                    <input className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="contraseña" />
+                                    <input className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="Contraseña" />
                                 </div>
                             </div>
                             <div className="w-full flex flex-wrap -mx-3 mb-6">
@@ -77,7 +78,7 @@ function Template({ providers }) {
                                     {/* <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                                         Contraseña
                                     </label> */}
-                                    <input className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="confirmar contraseña" />
+                                    <input className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="Confirmar contraseña" />
                                 </div>
                             </div>
 
@@ -103,7 +104,7 @@ function Template({ providers }) {
                             {Object.values(providers).map((provider) => (
                                 <div className='p-4  h-10 flex flex-row items-center mx-auto justify-center' key={provider.name}>
                                     <div className='btn mb-2 mr-2  bg-blue-500' key={provider.name}>
-                                        <LoginBtn provider={provider} logos={logos} />
+                                        <SignUpBtn provider={provider} logos={logos} />
                                     </div>
 
                                 </div>
