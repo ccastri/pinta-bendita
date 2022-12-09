@@ -28,7 +28,7 @@ function Template({ providers }) {
 
 
 
-                <div className='bg-black/[.54] max-w-full mx-5 -mb-10 min-h-[520px] '>
+                <div className='bg-black/[.54] max-w-full mx-5 -mb-10 min-h-[720px] '>
 
                     {/* <div className='p-5 '> */}
                     <h1 className='relative text-white text-center items-center text-2xl p-5 text-bold'>Crea tu cuenta</h1>
@@ -39,7 +39,7 @@ function Template({ providers }) {
 
 
                         {/* <p className="absolute font-xs z-50 italic">{`This is not a REAL app. I'm just playin'`}</p> */}
-                        <form className=" absolute flex flex-col w-full max-w-lg ">
+                        <form className=" flex flex-col w-full max-w-lg ">
                             <div className="flex flex-wrap my-auto w-full -mx-3 mb-0">
                                 <div className="mx-auto md:w-1/2 px-3 mb-6 md:mb-0">
                                     {/* <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
@@ -98,7 +98,7 @@ function Template({ providers }) {
                             {/* </div> */}
                         </form>
 
-                        <div className="absolute flex flex-row w-full mx-auto h-3 max-w-[50] space-x-2 -bottom-40 justify-center items-center">
+                        <div className=" flex flex-row w-full mx-auto h-3 max-w-[50] space-x-2 my-10 -bottom-80 justify-center items-center">
 
                             {Object.values(providers).map((provider) => (
                                 <div className='p-4  h-10 flex flex-row items-center mx-auto justify-center' key={provider.name}>
@@ -109,16 +109,16 @@ function Template({ providers }) {
                                 </div>
                             ))}
                         </div>
-                        <div className='flex px-2 relative pb-4 -bottom-80 text-justify'>
+                        <div className='relative flex px-2  pb-4 -bottom-120 text-justify'>
 
-                            <p className=' text-gray-300 h-20 w-80 mx-auto leading-3 py-4 my-auto mb-10 text-xs font-semibold '>Al hacer clic en cualquiera de los botones de inicio de sesión social,
+                            <p className='absolute text-gray-300 h-20 w-80 mx-auto leading-3 py-4 my-auto mb-10 text-xs font-semibold '>Al hacer clic en cualquiera de los botones de inicio de sesión social,
                                 acepta los términos de la política de privacidad descritos <span className='btn cursor-pointer underline'>aqui</span></p>
                         </div>
 
                     </div>
 
                 </div>
-                <div className='flex flex-col mt-20 bg-black/[.54] relative mx-5  min-h-[200px] mb-30  px-4'>
+                {/* <div className='flex flex-col mt-20 bg-black/[.54] relative mx-5  min-h-[200px] mb-30  px-4'>
                     <p className='mt-10 text-gray-300 w-full text-justify  text-xs mx-auto leading-3 '> Ser el nuevo nunca había sido tan divertido. Enterate
                         de las ultimas promociones, recibe descuentos por
                         tu nueva membresia y accede a nuestra comunidad
@@ -130,7 +130,7 @@ function Template({ providers }) {
                     >
                         Registrar
                     </button>
-                </div>
+                </div> */}
             </div >
 
 
