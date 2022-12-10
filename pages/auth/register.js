@@ -112,7 +112,7 @@ function Template({ providers }) {
                         </div>
                         <div className='relative flex px-2  pb-4 -bottom-120 text-justify'>
 
-                            <p className='absolute text-gray-300 h-20 w-80 mx-auto leading-3 py-4 my-auto mb-10 text-xs font-semibold '>Al hacer clic en cualquiera de los botones de inicio de sesión social,
+                            <p className='absolute text-gray-300 h-20 w-80 mx-auto leading-3 py-4 my-auto mb-10 text-md font-semibold '>Al hacer clic en cualquiera de los botones de inicio de sesión social,
                                 acepta los términos de la política de privacidad descritos <span className='btn cursor-pointer underline'>aqui</span></p>
                         </div>
 
