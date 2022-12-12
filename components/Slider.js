@@ -34,7 +34,7 @@ const Slider = () => {
                 setIndex1((index1 + 1) % images2.length)
             }, 800)
         }
-    }, [transR, transL, index, index1, images2])
+    }, [transR, transL])
     const handlePrev = () => {
         setTransR(true)
         setTransL(false)
@@ -42,23 +42,27 @@ const Slider = () => {
         const nextIndex = index - 1;
         const nextIndex1 = index1 - 1;
 
-        if (nextIndex < 0 && nextIndex1 < 0) {
+        if (nextIndex < 0) {
             setIndex(images2.length - 1)
-            setIndex1(images2.length - 1)
+
         } else {
             setIndex(nextIndex)
+
+        }
+        if (nextIndex1 < 0) {
+            setIndex1(images2.length - 1)
+        } else {
             setIndex1(nextIndex1)
         }
 
     }
     const handleNext = () => {
-        setTransL(true)
         setTransR(false)
-        setIndex((index + 1) % images2.length)
-        setIndex1((index1 + 1) % images2.length)
+        setTransL(true)
+
     }
     return (
-        <div id="carouselExampleIndicators" className="carousel slide relative" data-bs-ride="carousel">
+        <div id="carouselExampleIndicators" className=" carousel slide relative" data-bs-ride="carousel">
             <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
                 <button
                     type="button"
@@ -82,20 +86,20 @@ const Slider = () => {
                 ></button>
             </div>
             <div className=" w-full overflow-hidden">
-                <div className="relative h-50 carousel-item active float-left flex w-full">
+                <div className=" h-50 carousel-item active float-left flex w-full">
 
 
 
                     <img
                         src={images2[index]}
                         className={` absolute w-full object-contain 
-                            ${transL ? 'transition duration-50 ease-linear transform -translate-x-full' : transR ? 'animate-slideL' : ''}`}
+                            ${transL ? 'transition duration-500 ease-linear transform -translate-x-full' : transR ? 'animate-slideL' : ''}`}
                         alt="Wild Landscape"
                     />
                     <img
                         src={images2[index1]}
-                        className={` object-contain  w-full  
-                            ${transL ? 'animate-slideR' : transR ? 'transition duration-50 ease-linear transform -translate-x-full' : ''} `}
+                        className={`absolute object-contain  w-full  
+                            ${transL ? 'animate-slideR' : transR ? 'transition duration-500 ease-linear transform -translate-x-full' : ''} `}
                         alt="Wild Landscape"
                     />
 

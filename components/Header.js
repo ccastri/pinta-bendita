@@ -8,13 +8,15 @@ import {
     BadgeCheckIcon,
 } from '@heroicons/react/outline'
 import { Router, useRouter } from 'next/router'
+import { useState } from 'react'
 import HeaderItem from './HeaderItem'
 
 const Header = () => {
+    const [showModal, setShowModal] = useState(false)
     const router = useRouter()
 
     return (
-        <div className="flex pt-5 bg-black flex-grow items-center min-w-full my-auto justify-between max-w-2xl h-[100px]">
+        <div className=" overflow-x-0 flex pt-5 bg-black flex-grow items-center min-w-full my-auto justify-between max-w-2xl h-[100px] w-full">
 
             <div className='flex'>
 
@@ -29,7 +31,7 @@ const Header = () => {
             <div className='flex'>
                 <HeaderItem title='SEARCH' Icon={SearchIcon} />
 
-                <HeaderItem title='ACCOUNT' Icon={UserIcon} onClick={() => router.push('/auth/signin')} />
+                <HeaderItem title='ACCOUNT' Icon={UserIcon} onClick={() => setShowModal(true)} />
             </div>
 
         </div>
