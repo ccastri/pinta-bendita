@@ -6,10 +6,16 @@ import Header from '../components/Header'
 import Modal from '../components/Modal'
 import styles from '../styles/Home.module.css'
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import {openModal} from '../slices/modal/modalSlice'
+import type {RootState} from '../store'
+
 // import Banner from '../components/Banner'
 
 export default function Home({}) {
-  
+  const {isOpen} = useSelector((state: RootState) => state.modal)
+//  =  useSelector((state: RootState) => state.modal
+   const dispatch = useDispatch()
   
   
   return (
@@ -22,7 +28,7 @@ export default function Home({}) {
       {/* <Banner banner={banner}> */}
 
       <Header />
-      <Modal/>
+      {isOpen && <Modal />}
       <SwiperSlider/>
       {/* </Banner> */}
 
