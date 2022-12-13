@@ -29,7 +29,7 @@ function Signin({ providers }) {
 
 
 
-                <div className='relative bg-black/[.54] max-w-full mx-5 -mb-12   min-h-[440px] '>
+                <div className='relative bg-black/[.54] max-w-full mx-5  -mb-10  min-h-[460px] '>
 
                     {/* <div className='p-5 '> */}
                     <h1 className='relative text-white text-2xl p-5 text-bold'>Login</h1>
@@ -89,11 +89,11 @@ function Signin({ providers }) {
                             {/* </div> */}
                         </form>
 
-                        <div className=" flex flex-row w-full mx-auto mt-20  ">
+                        <div className=" flex flex-row w-full mx-auto mt-8">
 
                             {Object.values(providers).map((provider) => (
-                                <div className='p-4  h-10 flex flex-row items-center mx-auto justify-center' key={provider.name}>
-                                    <div className='btn mb-2 mr-2 p-4 text-l bg-blue-500' key={provider.name}>
+                                <div className='p-4  flex flex-row items-center mx-auto justify-center' key={provider.name}>
+                                    <div className='btn mb-2 mr-2 text-l bg-blue-500' key={provider.name}>
                                         <LoginBtn provider={provider} logos={logos} />
                                     </div>
 
@@ -102,14 +102,14 @@ function Signin({ providers }) {
                         </div>
                         <div className='flex    text-justify'>
 
-                            <p className=' absolute text-gray-200 h-20 w-full  pt-6 px-12 mx-auto leading-4  text-sm font-semibold '>Al hacer clic en cualquiera de los botones de inicio de sesión social,
+                            <p className=' absolute text-gray-200 h-20 w-full px-12 mx-auto leading-4  text-sm font-semibold '>Al hacer clic en cualquiera de los botones de inicio de sesión social,
                                 acepta los términos de la política de privacidad descritos <span className='btn cursor-pointer underline'>aqui</span></p>
                         </div>
 
                     </div>
 
                 </div>
-                <div className='flex flex-col mt-20 bg-black/[.54] relative mx-5 px-2 min-h-[200px] mb-30  '>
+                <div className='flex flex-col mt-12 bg-black/[.54] relative mx-5 px-2 min-h-[200px] mb-30  '>
                     <p className='mt-10 text-gray-200 w-full text-justify px-10 text-sm mx-auto leading-4 '> Ser el nuevo nunca había sido tan divertido. Enterate
                         de las ultimas promociones, recibe descuentos por
                         tu nueva membresia y accede a nuestra comunidad

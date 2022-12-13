@@ -12,7 +12,7 @@ import { useState } from 'react'
 import HeaderItem from './HeaderItem'
 
 import { useDispatch, useSelector } from 'react-redux'
-import {openModal} from '../slices/modal/modalSlice'
+import {closeModal, openModal} from '../slices/modal/modalSlice'
 import type {RootState} from '../store'
 
 const Header = () => {
@@ -39,7 +39,10 @@ const Header = () => {
             <div className='flex'>
                 <HeaderItem title='SEARCH' Icon={SearchIcon} onClick={() => router.push('/')} />
 
-                <HeaderItem title='ACCOUNT' Icon={UserIcon} onClick={() => dispatch(openModal())}  />
+                <HeaderItem title='ACCOUNT' Icon={UserIcon} onClick={() => {
+                    dispatch(openModal())
+                   
+                }}  />
             </div>
 
         </div>

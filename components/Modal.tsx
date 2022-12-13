@@ -15,6 +15,8 @@ const Modal = () => {
                 <p>
                     Inicia sesion y aprovecha las promociones para los benditos
                 </p>
+                <div className="flex">
+
                 <button 
                     className='bg-amber-600'
                     onClick={()=> router.push('/auth/signin')}>
@@ -22,9 +24,10 @@ const Modal = () => {
                 </button>
                 <button className='bg-amber-600'
                     onClick={() => dispatch(closeModal())}
-                >
-                    Iniciar Sesion
+                    >
+                    Close
                 </button>
+                    </div>
             </div>
         </div>
     )
