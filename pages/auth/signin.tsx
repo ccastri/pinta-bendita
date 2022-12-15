@@ -1,17 +1,22 @@
-import { getProviders, SignIn as SingIntoProvider } from 'next-auth/react'
+import { getProviders } from 'next-auth/react';
 import Image from 'next/image';
-import React from 'react'
 import LoginBtn from '../../components/LoginBtn';
 // import Header from '../../components/Header'
-import { useRouter } from 'next/router'
-import Header from '../../components/Header'
+import { useRouter } from 'next/router';
+import { useDispatch, useSelector } from 'react-redux';
+import Header from '../../components/Header';
+import { login } from '../../slices/auth/authSlice';
+import { RootState } from '../../store';
 
-function Signin({ providers }) {
+function Signin({ providers }: any) {
+    const { isAuth } = useSelector((state: RootState) => state.auth)
     const router = useRouter()
     const logos = [
         '/facebook.png',
         '/google.png'
     ]
+    const dispatch = useDispatch();
+    // const {isAuth} = useSelector((state: RootState) => state.auth)
     return (
         <div className="overflow-hidden max-h-full">
             <Header />
@@ -65,16 +70,16 @@ function Signin({ providers }) {
                                 <h1 className=' text-center w-full top-5 absolute'>INICAR SESSION </h1>
                                 {/* <p className='btn text-center mt-10 w-full absolute underline cursor-pointer'>Recordar contraseña</p> */}
                             </div>
-                            <div class=" pt-2 w-full flex mx-auto -mt-10 justify-between ">
-                                <div class=" flex w-full mx-[140px] items-center sm:mx-[100]  justify-evenly ">
-                                    <div class="flex w-full">
-                                        <div class="flex items-center btn  h-5">
-                                            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
+                            <div className=" pt-2 w-full flex mx-auto -mt-10 justify-between ">
+                                <div className=" flex w-full mx-[140px] items-center sm:mx-[100]  justify-evenly ">
+                                    <div className="flex w-full">
+                                        <div className="flex items-center btn  h-5">
+                                            <input id="remember" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
                                         </div>
-                                        <label for="remember" class=" text-sm pl-2 font-medium text-white dark:text-gray-300">Remember me</label>
+                                        <label htmlFor="remember" className=" text-sm pl-2 font-medium text-white dark:text-gray-300">Remember me</label>
                                     </div>
 
-                                    <a href="#" class="btn text-sm text-blue-700 hover:underline dark:text-blue-500"> Lost Password?</a>
+                                    <a href="#" className="btn text-sm text-blue-700 hover:underline dark:text-blue-500"> Lost Password?</a>
                                 </div>
                             </div>
                             {/* 
@@ -87,11 +92,12 @@ function Signin({ providers }) {
                                 ))}
                             </div> */}
                             {/* </div> */}
+                            <button type="button" className='relative bg-black' onClick={() => dispatch(login())} >INICIAR SESION </button>
                         </form>
 
                         <div className=" flex flex-row w-full mx-auto mt-8">
 
-                            {Object.values(providers).map((provider) => (
+                            {Object.values(providers).map((provider : any) => (
                                 <div className='p-4  flex flex-row items-center mx-auto justify-center' key={provider.name}>
                                     <div className='btn mb-2 mr-2 text-l bg-blue-500' key={provider.name}>
                                         <LoginBtn provider={provider} logos={logos} />

@@ -19,7 +19,7 @@ const Header = () => {
     const [showModal, setShowModal] = useState(false)
     const router = useRouter()
 
-    const modal = useSelector((state: RootState) => state.modal.isOpen)
+    const isOpen = useSelector((state: RootState) => state.modal.isOpen)
     const dispatch = useDispatch()
 
 
@@ -33,16 +33,15 @@ const Header = () => {
             </div>
             <div className='items-center justify-center mb-5 ml-10'>
 
-                <h1>{`${modal}`}</h1>
+                <h1>{`${isOpen}`}</h1>
             </div>
 
             <div className='flex'>
                 <HeaderItem title='SEARCH' Icon={SearchIcon} onClick={() => router.push('/')} />
 
-                <HeaderItem title='ACCOUNT' Icon={UserIcon} onClick={() => {
-                    dispatch(openModal())
-                   
-                }}  />
+               <HeaderItem title='ACCOUNT' Icon={UserIcon} onClick={() => dispatch(openModal(true))}  />
+      
+          
             </div>
 
         </div>
