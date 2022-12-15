@@ -19,11 +19,15 @@ const Modal = () => {
 
                 <button 
                     className='bg-amber-600'
-                    onClick={()=> router.push('/auth/signin')}>
+                    onClick={()=> {
+                        // dispatch(closeModal(false))
+                        router.push('/auth/signin')
+    
+                     } }>
                     Iniciar Sesion
                 </button>
                 <button className='bg-amber-600'
-                    onClick={() => dispatch(closeModal())}
+                    onClick={() => dispatch(closeModal(false))}
                     >
                     Close
                 </button>

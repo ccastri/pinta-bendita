@@ -14,7 +14,8 @@ import type {RootState} from '../store'
 
 export default function Home({}) {
   const {isOpen} = useSelector((state: RootState) => state.modal)
-//  =  useSelector((state: RootState) => state.modal
+  const {isAuth} = useSelector((state: RootState) => state.auth)
+console.log(isAuth)
    const dispatch = useDispatch()
   
   
@@ -28,8 +29,8 @@ export default function Home({}) {
       {/* <Banner banner={banner}> */}
 
       <Header />
-      {isOpen && <Modal />}
-      <SwiperSlider/>
+      {isOpen && <Modal /> }
+      {isAuth && <SwiperSlider/> }
       {/* </Banner> */}
 
     </div>
