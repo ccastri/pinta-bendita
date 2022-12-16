@@ -5,14 +5,36 @@ import SwiperSlider from '../components/SwiperSlider'
 import Header from '../components/Header'
 import Modal from '../components/Modal'
 import styles from '../styles/Home.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {openModal} from '../slices/modal/modalSlice'
 import type {RootState} from '../store'
+import axios from "axios";
 
 // import Banner from '../components/Banner'
 
 export default function Home({}) {
+
+useEffect(() => {
+
+
+  const options = {
+    method: 'GET',
+    url: 'https://taobao-api.p.rapidapi.com/api',
+    params: {api: 'item_detail_simple', num_iid: '574862941212'},
+    headers: {
+      'X-RapidAPI-Key': '8fc57e7138msh52d3e2f8ce624ebp1a873djsn825290ea6275',
+      'X-RapidAPI-Host': 'taobao-api.p.rapidapi.com'
+    }
+  };
+  
+  axios.request(options).then(function (response) {
+    console.log(response.data);
+  }).catch(function (error) {
+    console.error(error);
+  });
+}, [])
+
   const {isOpen} = useSelector((state: RootState) => state.modal)
   const {isAuth} = useSelector((state: RootState) => state.auth)
 console.log(isAuth)
@@ -29,7 +51,7 @@ console.log(isAuth)
       {/* <Banner banner={banner}> */}
 
       <Header />
-      {isOpen && <Modal /> }
+      {/* {isOpen && <Modal /> } */}
       {isAuth && <SwiperSlider/> }
       {/* </Banner> */}
 
