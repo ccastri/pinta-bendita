@@ -5,11 +5,10 @@ import { RootState } from "../store";
 import { clearCart } from "../slices/cart/cartSlice";
 
 const CartContainer = () => {
-    const {cartItems, totalQuantity, amount} = useSelector((state: RootState) => state.cart)
+    const {cartItems, total, amount} = useSelector((state: RootState) => state.cart)
     const dispatch = useDispatch() 
     
-    if (amount <1){
-
+    if (amount <1){ 
         return (
             <section className="cart">
         {/* cart header */}
@@ -18,28 +17,26 @@ const CartContainer = () => {
             <h4>Is currently empty</h4>
         </header>
     </section>
-  )
-}
+)}
+
 return(
     <section className="cart">
     {/* cart header */}
-    <header>
-        <h2> Your Bag</h2>        
-    </header>
+        <header>
+            <h2> Your Bag</h2>        
+        </header>
+        
         <div>
             {cartItems.map((item: CartItem)=> ( 
                 <CartItems  key={item.id} {...item}/>
-               
-                )
-
-        
-        )}</div>
-
+            )
+        )}
+        </div>
         <footer>
             <hr />
             <div>
                 <h4>
-                    {totalQuantity}
+                    {total}
                 </h4>
             </div>
             <button className=" cursor-pointer w-5" onClick={()=>dispatch(clearCart())}> Clear</button>

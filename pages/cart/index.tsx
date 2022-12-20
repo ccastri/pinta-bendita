@@ -1,7 +1,18 @@
+import { useDispatch, useSelector } from 'react-redux'
 import CartContainer from '../../components/cartContainer'
+import { calculateTotals } from '../../slices/cart/cartSlice'
+import { RootState } from '../../store'
+import {useEffect} from 'react'
 // import React from '../../components/cartContainer'
 
-const index = () => {
+
+const Index = () => {
+  const dispatch = useDispatch()
+  const {cartItems} = useSelector((state: RootState) => state.cart)
+
+  useEffect(() => {
+    dispatch(calculateTotals())
+  }, [cartItems, dispatch])
   return (
     <div>
       <CartContainer/>
@@ -9,4 +20,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
