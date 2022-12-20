@@ -11,7 +11,7 @@ import { RootState } from '../../store';
 function Signin({ providers }: any) {
     const { isAuth } = useSelector((state: RootState) => state.auth)
     const router = useRouter()
-    const logos = [
+    const logos: String[] = [
         '/facebook.png',
         '/google.png'
     ]
@@ -92,7 +92,7 @@ function Signin({ providers }: any) {
                                 ))}
                             </div> */}
                             {/* </div> */}
-                            <button type="button" className='relative bg-black' onClick={() => dispatch(login())} >INICIAR SESION </button>
+                            <button type="button" className='relative bg-black' onClick={() => dispatch(login(true))} >INICIAR SESION </button>
                         </form>
 
                         <div className=" flex flex-row w-full mx-auto mt-8">
