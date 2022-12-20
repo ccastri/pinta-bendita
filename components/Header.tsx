@@ -1,22 +1,16 @@
 import {
-    HomeIcon,
-    SearchIcon,
-    UserIcon,
-    MenuIcon,
-    BadgeCheckIcon,
+    HomeIcon, MenuIcon, SearchIcon,
+    UserIcon
 } from '@heroicons/react/outline'
-import { Router, useRouter } from 'next/router'
-import { useState } from 'react'
+import { useRouter } from 'next/router'
 import HeaderItem from './HeaderItem'
-
 import { useDispatch, useSelector } from 'react-redux'
-import {closeModal, openModal} from '../slices/modal/modalSlice'
-import type {RootState} from '../store'
+import { openModal } from '../slices/modal/modalSlice'
+import type { RootState } from '../store'
 
 const Header = () => {
 
     const router = useRouter()
-
     const isOpen = useSelector((state: RootState) => state.modal.isOpen)
     const dispatch = useDispatch()
 
@@ -32,7 +26,9 @@ const Header = () => {
             </div>
             <div className='flex'>
                 <HeaderItem title='SEARCH' Icon={SearchIcon} onClick={() => router.push('/')} />
-                <HeaderItem title='ACCOUNT' Icon={UserIcon} onClick={() => dispatch(openModal(true))}  />
+                <HeaderItem title='ACCOUNT' Icon={UserIcon} onClick={() => {
+                    dispatch(openModal(true))
+                }}  />
             </div>
         </div>
     )
