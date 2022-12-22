@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import SwiperSlider from '../components/SwiperSlider'
-
 import Header from '../components/Header'
 import Modal from '../components/Modal'
 import styles from '../styles/Home.module.css'
@@ -14,6 +13,10 @@ import axios from "axios";
 
 export default function Home({}) {
 
+  // useEffect(() => {
+
+
+  // }, [])
 
   const {isOpen} = useSelector((state: RootState) => state.modal)
   const {isAuth} = useSelector((state: RootState) => state.auth)
