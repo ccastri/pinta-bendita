@@ -7,10 +7,10 @@ import {
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../store"
 import { clearCart, increase, decrease, remove } from "../slices/cart/cartSlice"
-import { CartItem } from "../cartItems";
+import { CartItem, CartItem2 } from "../cartItems";
 
 
-const CartItems = ({id, img, title, price, amount}: CartItem) => {
+const CartItems = ({id, image, title, price, amount}: CartItem2) => {
   // console.log(img);
   const dispatch = useDispatch()
   // const {amount} = useSelector((state: RootState) => state.cart)
@@ -19,7 +19,7 @@ const CartItems = ({id, img, title, price, amount}: CartItem) => {
       <div className="w-20 ">
       <p className=" w-4">{id}</p>
       <h1>{title}</h1>
-      <Image className="flex" src={`${img}`} alt="" width={50} height={50}></Image>
+      <Image className="flex" src={`${image}`} alt="" width={50} height={50}></Image>
       <h2>{price}</h2>
       <h6>x{amount}</h6>
       </div> 
